@@ -8,11 +8,10 @@
         /* --- CSS VARIABLES: Easy to change colors here --- */
         :root {
             --bg-color: #050505;
-            --card-bg: #111111;
-            --accent-glow: #00f2ff; /* Cyan glow */
-            --accent-secondary: #7000ff; /* Purple glow */
+            --card-bg: #0d0d0d;
+            --accent-glow: #00d9ff; /* Cyan glow */
             --text-main: #ffffff;
-            --text-dim: #a0a0a0;
+            --text-dim: #888888;
             --transition: 0.3s ease;
         }
 
@@ -21,7 +20,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         html {
@@ -50,19 +49,10 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.02);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             animation: rotate 60s linear infinite;
-        }
-
-        .planet {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: var(--accent-glow);
-            border-radius: 50%;
-            box-shadow: 0 0 15px var(--accent-glow);
         }
 
         @keyframes rotate {
@@ -78,7 +68,7 @@
         }
 
         header {
-            height: 80px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -90,19 +80,18 @@
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--accent-glow), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-main);
         }
 
         nav a {
             color: var(--text-main);
             text-decoration: none;
-            margin-left: 30px;
+            margin-left: 40px;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: var(--transition);
         }
 
@@ -112,38 +101,38 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 90vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 60px 0;
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin-bottom: 30px;
-            border: 3px solid var(--accent-glow);
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             object-fit: cover;
             background: var(--card-bg);
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #fff, var(--accent-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3.5rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             color: var(--text-dim);
-            max-width: 600px;
-            margin-bottom: 40px;
+            max-width: 700px;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
         .hero-buttons {
@@ -155,13 +144,14 @@
         }
 
         .btn {
-            padding: 12px 30px;
-            border: 2px solid var(--accent-glow);
+            padding: 10px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             background: transparent;
-            color: var(--accent-glow);
+            color: var(--text-main);
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
             transition: var(--transition);
             cursor: pointer;
             display: inline-flex;
@@ -170,48 +160,42 @@
         }
 
         .btn:hover {
-            background: var(--accent-glow);
-            color: var(--bg-color);
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            border-color: var(--accent-glow);
+            color: var(--accent-glow);
         }
 
-        /* --- SOCIAL ICONS IN HERO --- */
+        /* --- SOCIAL LINKS IN HERO --- */
         .hero-socials {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             justify-content: center;
             margin-top: 20px;
         }
 
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid rgba(0, 242, 255, 0.3);
-            border-radius: 12px;
-            font-size: 1.8rem;
-            transition: var(--transition);
+        .social-link {
+            font-size: 0.9rem;
+            color: var(--text-dim);
             text-decoration: none;
-            color: var(--text-main);
+            transition: var(--transition);
+            padding: 6px 14px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .social-icon:hover {
+        .social-link:hover {
+            color: var(--accent-glow);
             border-color: var(--accent-glow);
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
-            transform: translateY(-5px);
         }
 
         /* --- SECTION HEADINGS --- */
         .section-title {
-            padding-top: 100px;
+            padding-top: 80px;
             margin-bottom: 50px;
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border-left: 4px solid var(--accent-glow);
-            padding-left: 15px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            color: var(--text-main);
         }
 
         /* --- GLOWING CARDS --- */
@@ -225,85 +209,86 @@
         .card {
             background: var(--card-bg);
             padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease, border 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-glow);
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .card h3 {
             margin-bottom: 5px;
-            color: var(--accent-glow);
-            font-size: 1.3rem;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .card-subtitle {
             color: var(--text-dim);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 8px;
             font-style: italic;
         }
 
         .card-duration {
             color: var(--text-dim);
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
-            padding-bottom: 10px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 8px;
         }
 
         .card p {
             color: var(--text-dim);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.6;
         }
 
         .card ul {
             color: var(--text-dim);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             list-style: none;
             padding-left: 0;
-            margin: 15px 0 0 0;
+            margin: 12px 0 0 0;
         }
 
         .card ul li {
-            margin: 8px 0;
-            padding-left: 20px;
+            margin: 6px 0;
+            padding-left: 16px;
             position: relative;
         }
 
         .card ul li:before {
-            content: "▸";
+            content: "–";
             position: absolute;
             left: 0;
-            color: var(--accent-glow);
+            color: var(--text-dim);
         }
 
         .tag {
             display: inline-block;
-            padding: 4px 10px;
-            background: rgba(0, 242, 255, 0.1);
-            color: var(--accent-glow);
-            border-radius: 5px;
-            font-size: 0.75rem;
-            margin-bottom: 15px;
+            padding: 3px 8px;
+            background: rgba(0, 217, 255, 0.08);
+            color: var(--text-dim);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-bottom: 12px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* --- FEATURED CARD (Felix Advisory) --- */
         .featured-card {
-            background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(112, 0, 255, 0.05));
+            background: var(--card-bg);
             padding: 40px;
-            border-radius: 15px;
-            border: 2px solid var(--accent-glow);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-radius: 8px;
+            border: 1px solid var(--accent-glow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
             margin-bottom: 50px;
@@ -312,21 +297,22 @@
 
         .featured-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.15);
         }
 
         .featured-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 8px;
+            color: var(--accent-glow);
         }
 
         .featured-card .card-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 5px;
         }
 
         .featured-card .card-duration {
-            border-bottom: 2px solid rgba(0, 242, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
         }
 
         /* --- ADDITIONAL EXPERIENCES GRID --- */
@@ -340,47 +326,48 @@
         .small-card {
             background: var(--card-bg);
             padding: 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: transform 0.3s ease, border 0.3s ease;
         }
 
         .small-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-secondary);
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .small-card h4 {
-            color: var(--accent-secondary);
-            font-size: 1.1rem;
+            color: var(--text-main);
+            font-size: 1rem;
             margin-bottom: 3px;
+            font-weight: 600;
         }
 
         .small-card .org-name {
-            color: var(--accent-glow);
-            font-size: 0.9rem;
-            font-weight: 600;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            font-weight: 500;
             margin-bottom: 8px;
         }
 
         .small-card .description {
             color: var(--text-dim);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             line-height: 1.5;
             margin-bottom: 8px;
         }
 
         .small-card .status {
-            color: var(--accent-secondary);
-            font-size: 0.75rem;
+            color: var(--text-dim);
+            font-size: 0.7rem;
             font-style: italic;
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         /* --- FOOTER & SOCIALS --- */
         footer {
             padding: 60px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
         }
 
@@ -391,28 +378,27 @@
         .social-links a {
             color: var(--text-main);
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1rem;
+            margin: 0 12px;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
         .social-links a:hover {
-            color: var(--accent-secondary);
+            color: var(--accent-glow);
         }
 
         /* --- RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero-buttons { flex-direction: column; }
-            .btn { width: 100%; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn { width: auto; }
             nav { display: none; }
-            .hero-socials { gap: 15px; }
-            .social-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+            .hero-socials { gap: 15px; flex-wrap: wrap; }
+            .profile-image { width: 100px; height: 100px; }
             .featured-card { padding: 25px; }
-            .featured-card h3 { font-size: 1.4rem; }
-            .additional-experiences {
-                grid-template-columns: 1fr;
-            }
+            .featured-card h3 { font-size: 1.3rem; }
+            .additional-experiences { grid-template-columns: 1fr; }
+            .section-title { padding-top: 60px; }
         }
     </style>
 </head>
@@ -420,12 +406,8 @@
 
     <!-- Universe Visuals -->
     <div class="universe-bg">
-        <div class="orbit-ring" style="width: 400px; height: 400px;">
-            <div class="planet" style="top: 0; left: 50%;"></div>
-        </div>
-        <div class="orbit-ring" style="width: 700px; height: 700px; animation-duration: 100s; animation-direction: reverse;">
-            <div class="planet" style="bottom: 0; right: 50%; background: var(--accent-secondary); box-shadow: 0 0 15px var(--accent-secondary);"></div>
-        </div>
+        <div class="orbit-ring" style="width: 500px; height: 500px;"></div>
+        <div class="orbit-ring" style="width: 800px; height: 800px; animation-duration: 120s; animation-direction: reverse;"></div>
     </div>
 
     <div class="container">
@@ -445,18 +427,17 @@
             <img src="profile.jpg" alt="Devansh Singla" class="profile-image">
             <h1>Devansh Singla</h1>
             <p>Equity Research Analyst | Financial Markets Enthusiast</p>
-            <p style="font-size: 1rem; margin-top: 10px;">Decoding equity markets through data-driven research and strategic analysis. Professional insights for the futuristic investor.</p>
+            <p style="font-size: 0.95rem; color: var(--text-dim); margin-bottom: 25px;">Decoding equity markets through data-driven research and strategic analysis. Professional insights for the futuristic investor.</p>
             
             <div class="hero-buttons">
-                <a href="mailto:your.email@example.com" class="btn">📧 Contact Me</a>
-                <a href="resume.pdf" download class="btn">📄 Download Resume</a>
+                <a href="mailto:your.email@example.com" class="btn">Contact Me</a>
+                <a href="resume.pdf" download class="btn">Resume</a>
             </div>
 
             <div class="hero-socials">
-                <a href="https://your-blog.com" class="social-icon" title="Blog">📝</a>
-                <a href="https://linkedin.com/in/your-profile" class="social-icon" title="LinkedIn">💼</a>
-                <a href="https://github.com/singladevansh" class="social-icon" title="GitHub">🔗</a>
-                <a href="https://twitter.com/your-handle" class="social-icon" title="Twitter">𝕏</a>
+                <a href="https://www.linkedin.com/in/devanshsingla/" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="http://ignitingsparkswithdevansh.blogspot.com/" class="social-link" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="https://github.com/singladevansh" class="social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </section>
 
@@ -469,7 +450,7 @@
                 <h3>Valuation & Equity Research</h3>
                 <div class="card-subtitle">Felix Advisory Private Limited</div>
                 <div class="card-duration">Aug 2023 - Jul 2025 · 2 yrs</div>
-                <p style="margin-bottom: 15px;"><strong>Gurugram, Haryana, India · Full-time</strong></p>
+                <p style="margin-bottom: 15px;">Gurugram, Haryana, India · Full-time</p>
                 <ul>
                     <li>Undertook valuation analysis of various public and private entities across different sectors</li>
                     <li>Developed financial models: DCF, Option Pricing (Black Scholes), Backsolve, Monte Carlo Simulation, Market Multiples (EV/Revenue, EV/EBITDA, P/B)</li>
@@ -485,7 +466,7 @@
                 <h4>Content Writer</h4>
                 <div class="org-name">Igniting Sparks</div>
                 <div class="description">
-                    Write and manage a self-run blog focused on finance, stock markets, technology, geopolitics, and the climate crisis, aiming to simplify complex topics and spark meaningful conversations.
+                    Self-run blog focused on finance, stock markets, technology, geopolitics, and the climate crisis. Simplifying complex topics and sparking meaningful conversations.
                 </div>
             </div>
             <div class="small-card">
@@ -494,7 +475,7 @@
                 <div class="description">
                     Content creation initiative bringing authentic conversations to the forefront.
                 </div>
-                <div class="status">📌 On a pause</div>
+                <div class="status">On a pause</div>
             </div>
         </div>
 
@@ -534,12 +515,12 @@
         <!-- Footer -->
         <footer id="contact">
             <div class="social-links">
-                <a href="https://linkedin.com/in/your-profile">LinkedIn</a>
-                <a href="https://twitter.com/your-handle">Twitter/X</a>
-                <a href="https://github.com/singladevansh">GitHub</a>
+                <a href="https://www.linkedin.com/in/devanshsingla/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="http://ignitingsparkswithdevansh.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="https://github.com/singladevansh" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="mailto:your.email@example.com">Email</a>
             </div>
-            <p style="color: var(--text-dim); font-size: 0.8rem;">&copy; 2026 Devansh Singla. Built with Pure HTML/CSS.</p>
+            <p style="color: var(--text-dim); font-size: 0.75rem; margin-top: 15px;">&copy; 2026 Devansh Singla. Built with Pure HTML/CSS.</p>
         </footer>
     </div>
 
@@ -561,8 +542,8 @@
         // Apply to all cards and featured cards for a smooth entrance
         document.querySelectorAll('.card, .featured-card, .small-card').forEach(card => {
             card.style.opacity = "0";
-            card.style.transform = "translateY(20px)";
-            card.style.transition = "all 0.6s ease-out";
+            card.style.transform = "translateY(15px)";
+            card.style.transition = "all 0.5s ease-out";
             observer.observe(card);
         });
     </script>
