@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance & Equity Research Portfolio</title>
+    <style>
+        /* --- CSS VARIABLES: Easy to change colors here --- */
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --accent-glow: #00f2ff; /* Cyan glow */
+            --accent-secondary: #7000ff; /* Purple glow */
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --transition: 0.3s ease;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- ORBIT VISUALS (Background Animation) --- */
+        .universe-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 60s linear infinite;
+        }
+
+        .planet {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-glow);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* --- LAYOUT & SECTIONS --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--accent-glow);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, var(--accent-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+        }
+
+        /* --- SECTION HEADINGS --- */
+        .section-title {
+            padding-top: 100px;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 4px solid var(--accent-glow);
+            padding-left: 15px;
+        }
+
+        /* --- GLOWING CARDS (Research & Blog) --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--accent-glow);
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--accent-glow);
+            border-radius: 5px;
+            font-size: 0.75rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* --- FOOTER & SOCIALS --- */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Universe Visuals -->
+    <div class="universe-bg">
+        <div class="orbit-ring" style="width: 400px; height: 400px;">
+            <div class="planet" style="top: 0; left: 50%;"></div>
+        </div>
+        <div class="orbit-ring" style="width: 700px; height: 700px; animation-duration: 100s; animation-direction: reverse;">
+            <div class="planet" style="bottom: 0; right: 50%; background: var(--accent-secondary); box-shadow: 0 0 15px var(--accent-secondary);"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Navigation -->
+        <header>
+            <div class="logo"><strong>FINANCE</strong>OS</div>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#research">Research</a>
+                <a href="#blog">Insights</a>
+                <a href="#contact">Socials</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <h1>Market Analyst</h1>
+            <p>Decoding equity markets through data-driven research and strategic analysis. Professional insights for the futuristic investor.</p>
+        </section>
+
+        <!-- Research Section -->
+        <h2 class="section-title" id="research">Equity Research</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="tag">Sector Analysis</div>
+                <h3>Tech Growth 2026</h3>
+                <p>An in-depth look into emerging semiconductor trends and the impact of localized AI infrastructure on market valuation.</p>
+            </div>
+            <div class="card">
+                <div class="tag">Valuation</div>
+                <h3>Energy Transition</h3>
+                <p>Comparative analysis of renewable energy giants vs. traditional power structures in the current regulatory landscape.</p>
+            </div>
+            <div class="card">
+                <div class="tag">Strategy</div>
+                <h3>Defensive Hedges</h3>
+                <p>A data-backed framework for protecting portfolios against high-volatility cycles in developing markets.</p>
+            </div>
+        </div>
+
+        <!-- Blog Section -->
+        <h2 class="section-title" id="blog">Latest Insights</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>The Psychology of Bull Markets</h3>
+                <p>Understanding the irrational exuberance that drives late-stage market cycles.</p>
+            </div>
+            <div class="card">
+                <h3>Interest Rates & Equity</h3>
+                <p>How the latest central bank shifts are redefining "Risk-Free" returns for the decade.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="contact">
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter/X</a>
+                <a href="#">GitHub</a>
+                <a href="#">Email</a>
+            </div>
+            <p style="color: var(--text-dim); font-size: 0.8rem;">&copy; 2026 Personal Finance Portfolio. Built with Pure HTML/CSS.</p>
+        </footer>
+    </div>
+
+    <script>
+        /* --- INTERSECTION OBSERVER: Simple Fade-in effect --- */
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        // Apply to all cards for a smooth entrance
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.6s ease-out";
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
