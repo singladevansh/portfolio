@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance & Equity Research Portfolio</title>
+    <title>Devansh Singla - Finance & Equity Research Portfolio</title>
     <style>
         /* --- CSS VARIABLES: Easy to change colors here --- */
         :root {
@@ -89,6 +89,14 @@
             z-index: 100;
         }
 
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--accent-glow), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         nav a {
             color: var(--text-main);
             text-decoration: none;
@@ -112,6 +120,17 @@
             text-align: center;
         }
 
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            border: 3px solid var(--accent-glow);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+            object-fit: cover;
+            background: var(--card-bg);
+        }
+
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 10px;
@@ -124,6 +143,64 @@
             font-size: 1.2rem;
             color: var(--text-dim);
             max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: 2px solid var(--accent-glow);
+            background: transparent;
+            color: var(--accent-glow);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: var(--accent-glow);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+        }
+
+        /* --- SOCIAL ICONS IN HERO --- */
+        .hero-socials {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(0, 242, 255, 0.3);
+            border-radius: 12px;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .social-icon:hover {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+            transform: translateY(-5px);
         }
 
         /* --- SECTION HEADINGS --- */
@@ -137,7 +214,7 @@
             padding-left: 15px;
         }
 
-        /* --- GLOWING CARDS (Research & Blog) --- */
+        /* --- GLOWING CARDS --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -162,13 +239,51 @@
         }
 
         .card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             color: var(--accent-glow);
+            font-size: 1.3rem;
+        }
+
+        .card-subtitle {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .card-duration {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            padding-bottom: 10px;
         }
 
         .card p {
             color: var(--text-dim);
             font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .card ul {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .card ul li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-glow);
         }
 
         .tag {
@@ -208,7 +323,11 @@
         /* --- RESPONSIVENESS --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            nav { display: none; } /* Simplified for mobile */
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; }
+            nav { display: none; }
+            .hero-socials { gap: 15px; }
+            .social-icon { width: 50px; height: 50px; font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -227,20 +346,61 @@
     <div class="container">
         <!-- Navigation -->
         <header>
-            <div class="logo"><strong>FINANCE</strong>OS</div>
+            <div class="logo">DEVANSH SINGLA</div>
             <nav>
                 <a href="#hero">Home</a>
+                <a href="#experience">Experience</a>
                 <a href="#research">Research</a>
                 <a href="#blog">Insights</a>
-                <a href="#contact">Socials</a>
             </nav>
         </header>
 
         <!-- Hero Section -->
         <section class="hero" id="hero">
-            <h1>Market Analyst</h1>
-            <p>Decoding equity markets through data-driven research and strategic analysis. Professional insights for the futuristic investor.</p>
+            <img src="profile.jpg" alt="Devansh Singla" class="profile-image">
+            <h1>Devansh Singla</h1>
+            <p>Equity Research Analyst | Financial Markets Enthusiast</p>
+            <p style="font-size: 1rem; margin-top: 10px;">Decoding equity markets through data-driven research and strategic analysis. Professional insights for the futuristic investor.</p>
+            
+            <div class="hero-buttons">
+                <a href="mailto:your.email@example.com" class="btn">📧 Contact Me</a>
+                <a href="resume.pdf" download class="btn">📄 Download Resume</a>
+            </div>
+
+            <div class="hero-socials">
+                <a href="https://your-blog.com" class="social-icon" title="Blog">📝</a>
+                <a href="https://linkedin.com/in/your-profile" class="social-icon" title="LinkedIn">💼</a>
+                <a href="https://github.com/singladevansh" class="social-icon" title="GitHub">🔗</a>
+                <a href="https://twitter.com/your-handle" class="social-icon" title="Twitter">𝕏</a>
+            </div>
         </section>
+
+        <!-- Experience Section -->
+        <h2 class="section-title" id="experience">Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Internship 1</h3>
+                <div class="card-subtitle">Company Name</div>
+                <div class="card-duration">Jun 2024 - Aug 2024</div>
+                <p>Equity Research Analyst / Financial Analyst</p>
+                <ul>
+                    <li>Achievement or responsibility 1</li>
+                    <li>Achievement or responsibility 2</li>
+                    <li>Achievement or responsibility 3</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Internship 2</h3>
+                <div class="card-subtitle">Company Name</div>
+                <div class="card-duration">Jan 2024 - Mar 2024</div>
+                <p>Financial Analysis / Research</p>
+                <ul>
+                    <li>Achievement or responsibility 1</li>
+                    <li>Achievement or responsibility 2</li>
+                    <li>Achievement or responsibility 3</li>
+                </ul>
+            </div>
+        </div>
 
         <!-- Research Section -->
         <h2 class="section-title" id="research">Equity Research</h2>
@@ -278,12 +438,12 @@
         <!-- Footer -->
         <footer id="contact">
             <div class="social-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter/X</a>
-                <a href="#">GitHub</a>
-                <a href="#">Email</a>
+                <a href="https://linkedin.com/in/your-profile">LinkedIn</a>
+                <a href="https://twitter.com/your-handle">Twitter/X</a>
+                <a href="https://github.com/singladevansh">GitHub</a>
+                <a href="mailto:your.email@example.com">Email</a>
             </div>
-            <p style="color: var(--text-dim); font-size: 0.8rem;">&copy; 2026 Personal Finance Portfolio. Built with Pure HTML/CSS.</p>
+            <p style="color: var(--text-dim); font-size: 0.8rem;">&copy; 2026 Devansh Singla. Built with Pure HTML/CSS.</p>
         </footer>
     </div>
 
@@ -312,4 +472,3 @@
     </script>
 </body>
 </html>
-
