@@ -7,17 +7,17 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --bg: #FDFBF7;
-            --bg-accent: #F5F1EA;
+            --bg-alt: #F5F1EA;
             --text-main: #1C1917;
             --text-dim: #57534E;
             --accent: #8B5E34;
             --border: #E7E0D5;
-            --transition: 0.4s ease;
+            --transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,81 +27,93 @@
             background-color: var(--bg);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
-        .mono { font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--accent); }
+        .mono { font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--accent); }
 
+        /* --- REFINED NAV --- */
         nav {
-            position: fixed; top: 0; width: 100%; height: 60px;
+            position: fixed; top: 0; width: 100%; height: 70px;
             display: flex; align-items: center; justify-content: center;
-            background: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(253, 251, 247, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
         }
 
-        .nav-inner { width: 100%; max-width: 1100px; padding: 0 30px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1rem; text-decoration: none; color: var(--text-main); }
-        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.8rem; margin-left: 25px; font-weight: 500; transition: var(--transition); }
+        .nav-inner { width: 100%; max-width: 1000px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.1rem; text-decoration: none; color: var(--text-main); letter-spacing: -0.01em; }
+        .nav-links a { 
+            text-decoration: none; color: var(--text-dim); font-size: 0.8rem; margin-left: 35px; font-weight: 400; 
+            transition: var(--transition); position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
         .nav-links a:hover { color: var(--text-main); }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 30px; }
-        section { padding: 40px 0; border-bottom: 1px solid var(--border); }
-        section:last-of-type { border-bottom: none; }
+        /* --- SECTIONS & TRANSITIONS --- */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+        section { padding: 80px 0; }
+        .section-alt { background-color: var(--bg-alt); width: 100vw; margin-left: calc(-50vw + 50%); }
 
-        .hero { display: flex; align-items: center; gap: 40px; padding-top: 120px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        .profile-container { width: 150px; height: 150px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 1px solid var(--border); background: var(--bg-accent); }
+        /* --- HERO: STRONGER HIERARCHY --- */
+        .hero { display: flex; align-items: center; gap: 60px; padding-top: 180px; padding-bottom: 100px; }
+        .profile-container { width: 180px; height: 180px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 1px solid var(--border); }
         .profile-container img { width: 100%; height: 100%; object-fit: cover; }
         
-        .hero-text h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 10px; }
-        .hero-text p { font-size: 1rem; color: var(--text-dim); max-width: 600px; margin-bottom: 20px; }
+        .hero-text h1 { font-size: 4rem; line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+        .hero-role { font-size: 1.1rem; color: var(--accent); font-weight: 500; margin-bottom: 24px; display: block; }
+        .hero-text p { font-size: 1.05rem; color: var(--text-dim); max-width: 480px; margin-bottom: 32px; font-weight: 400; }
         
-        .social-links { display: flex; gap: 15px; }
-        .social-links a { text-decoration: none; font-size: 0.75rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-        .social-links a:hover { text-decoration: underline; }
+        .social-links { display: flex; gap: 24px; }
+        .social-links a { text-decoration: none; font-size: 0.7rem; color: var(--text-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: var(--transition); opacity: 0.6; }
+        .social-links a:hover { opacity: 1; color: var(--accent); }
 
-        .section-title { margin-bottom: 25px; }
-        .section-title h2 { font-size: 1.8rem; }
-        .section-title .mono { display: block; margin-bottom: 8px; }
+        /* --- CARDS: REDUCED DENSITY --- */
+        .section-title { margin-bottom: 40px; text-align: left; }
+        .section-title h2 { font-size: 2.2rem; letter-spacing: -0.01em; margin-top: 8px; }
 
-        .boxed-card { padding: 25px; background: var(--bg-accent); border-radius: 4px; border: 1px solid var(--border); margin-bottom: 20px; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; flex-wrap: wrap; gap: 10px; }
-        .exp-header h3 { font-size: 1.3rem; }
-        .exp-meta { text-align: right; font-size: 0.8rem; color: var(--text-dim); }
+        .boxed-card { padding: 40px; background: #fff; border-radius: 4px; border: 1px solid var(--border); margin-bottom: 30px; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+        .exp-header h3 { font-size: 1.6rem; }
+        .exp-meta { font-size: 0.85rem; color: var(--text-dim); text-align: right; font-weight: 500; }
         
-        .org-name { color: var(--accent); font-weight: 600; display: block; margin-bottom: 10px; font-size: 0.9rem; }
+        .org-name { color: var(--accent); font-weight: 600; display: block; margin-bottom: 24px; font-size: 0.95rem; }
         
         .exp-list { list-style: none; }
-        .exp-list li { margin-bottom: 6px; position: relative; padding-left: 18px; color: var(--text-dim); font-size: 0.85rem; }
-        .exp-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+        .exp-list li { margin-bottom: 12px; position: relative; padding-left: 24px; color: var(--text-dim); font-size: 0.95rem; font-weight: 400; }
+        .exp-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .highlight { color: var(--text-main); font-weight: 500; }
 
-        .sub-exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .sub-card { padding: 20px; background: var(--bg-accent); border-radius: 4px; border: 1px solid var(--border); }
-        .sub-card h4 { margin-bottom: 4px; font-size: 1.05rem; }
-        .status-tag { font-size: 0.65rem; font-style: italic; color: var(--text-dim); margin-top: 8px; display: block; }
+        .sub-exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .sub-card { padding: 30px; background: #fff; border-radius: 4px; border: 1px solid var(--border); }
+        .sub-card h4 { font-size: 1.2rem; margin-bottom: 4px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { padding: 30px; border: 1px solid var(--border); transition: var(--transition); background: white; }
-        .card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(139, 94, 52, 0.04); }
-        .card h3 { margin: 12px 0 8px; font-size: 1.3rem; }
-        .card p { font-size: 0.85rem; color: var(--text-dim); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { padding: 40px; border: 1px solid var(--border); transition: var(--transition); background: #fff; border-radius: 4px; }
+        .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .card h3 { margin: 16px 0 12px; font-size: 1.4rem; }
+        .card p { font-size: 0.9rem; color: var(--text-dim); font-weight: 400; }
 
-        #blog-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .blog-card { text-decoration: none; color: inherit; display: block; }
-        .blog-card h3 { font-size: 1.15rem; margin: 8px 0; line-height: 1.3; transition: color 0.2s; }
+        #blog-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
+        .blog-card { text-decoration: none; color: inherit; }
+        .blog-card h3 { font-size: 1.3rem; margin: 12px 0; line-height: 1.3; font-weight: 700; transition: color 0.3s; }
         .blog-card:hover h3 { color: var(--accent); }
 
-        footer { padding: 40px 0; text-align: center; background: var(--bg-accent); }
-        .footer-logo { font-size: 1.3rem; margin-bottom: 10px; display: block; }
-        .footer-text { font-size: 0.8rem; color: var(--text-dim); max-width: 450px; margin: 0 auto 20px; }
+        footer { padding: 100px 0; text-align: center; border-top: 1px solid var(--border); }
+        .footer-logo { font-size: 1.5rem; margin-bottom: 12px; display: block; }
+        .footer-text { font-size: 0.9rem; color: var(--text-dim); max-width: 400px; margin: 0 auto 32px; }
 
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 100px; gap: 20px; }
-            .exp-header { flex-direction: column; align-items: center; text-align: center; }
-            .exp-meta { text-align: center; }
+        @media (max-width: 850px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 120px; gap: 40px; }
+            .exp-header { flex-direction: column; text-align: left; gap: 4px; }
+            .exp-meta { text-align: left; }
             .sub-exp-grid { grid-template-columns: 1fr; }
             nav .nav-links { display: none; }
         }
@@ -111,7 +123,7 @@
 
     <nav>
         <div class="nav-inner">
-            <a href="#" class="logo">DEVANSH SINGLA</a>
+            <a href="#" class="logo">DS.</a>
             <div class="nav-links">
                 <a href="#experience">Experience</a>
                 <a href="#research">Research</a>
@@ -124,101 +136,104 @@
     <div class="container">
         <section class="hero" id="home">
             <div class="profile-container">
-                <img src="profile.jpg" alt="Devansh Singla" onerror="this.src='https://via.placeholder.com/150/F5F1EA/1C1917?text=DS'">
+                <img src="profile.jpg" alt="Devansh Singla" onerror="this.src='https://via.placeholder.com/180/F5F1EA/1C1917?text=DS'">
             </div>
             <div class="hero-text">
                 <h1>Devansh Singla</h1>
-                <p>Equity Research Analyst | Financial Markets Enthusiast</p>
-                <p style="font-size: 0.9rem;">Decoding equity markets through data-driven research and strategic analysis. Professional insights for the futuristic investor.</p>
+                <span class="hero-role">Equity Research Analyst • CA Aspirant</span>
+                <p>Exploring markets through <span class="highlight">rigorous research</span>, valuation modeling, and macro-driven strategic analysis.</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/devanshsingla/" target="_blank">LinkedIn</a>
+                    <a href="https://linkedin.com/in/devanshsingla/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/singladevansh" target="_blank">GitHub</a>
-                    <a href="http://ignitingsparkswithdevansh.blogspot.com/" target="_blank">Blog</a>
+                    <a href="http://ignitingsparkswithdevansh.blogspot.com/" target="_blank">Research</a>
                     <a href="resume.pdf">Resume</a>
                 </div>
             </div>
         </section>
 
-        <section id="experience">
-            <div class="section-title">
-                <span class="mono">Experience</span>
-                <h2>Professional Experience</h2>
-            </div>
-
-            <div class="boxed-card">
-                <div class="exp-header">
-                    <h3>Valuation & Equity Research</h3>
-                    <div class="exp-meta">Aug 2023 - Jul 2025 · 2 yrs<br>Gurugram, Haryana, India</div>
+        <section id="experience" class="section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <span class="mono">Career</span>
+                    <h2>Professional Experience</h2>
                 </div>
-                <span class="org-name">Felix Advisory Private Limited · Full-time</span>
-                <ul class="exp-list">
-                    <li>Undertook valuation analysis of various public and private entities across different sectors.</li>
-                    <li>Developed financial models: DCF, Option Pricing (Black Scholes), Backsolve, Monte Carlo Simulation, Market Multiples (EV/Revenue, EV/EBITDA, P/B).</li>
-                    <li>Conducted valuations for M&A, Share Swaps, Share Transfers, Impairment Assessment, and ESOP Valuation.</li>
-                    <li>Performed comprehensive research using S&P CapIQ, Tracxn, and industry analysis software.</li>
-                </ul>
-            </div>
 
-            <div class="sub-exp-grid">
-                <div class="sub-card">
-                    <span class="mono">Editorial</span>
-                    <h4>Content Writer</h4>
-                    <span class="org-name">Igniting Sparks</span>
-                    <p style="font-size: 0.8rem; color: var(--text-dim);">Self-run blog focused on finance, stock markets, technology, geopolitics, and the climate crisis.</p>
+                <div class="boxed-card">
+                    <div class="exp-header">
+                        <h3>Valuation & Equity Research</h3>
+                        <div class="exp-meta">Aug 2023 - Jul 2025<br>Gurugram, India</div>
+                    </div>
+                    <span class="org-name">Felix Advisory Private Limited · Full-time</span>
+                    <ul class="exp-list">
+                        <li>Built advanced <span class="highlight">DCF, Black-Scholes & Monte Carlo</span> valuation models.</li>
+                        <li>Executed <span class="highlight">M&A, Share Swap & ESOP</span> valuation assignments for diverse sectors.</li>
+                        <li>Conducted forensic research using <span class="highlight">S&P CapIQ & Tracxn</span> industry software.</li>
+                    </ul>
                 </div>
-                <div class="sub-card">
-                    <span class="mono">Initiative</span>
-                    <h4>Co-Founder</h4>
-                    <span class="org-name">CANDID TALKS</span>
-                    <p style="font-size: 0.8rem; color: var(--text-dim);">Content creation initiative bringing authentic conversations to the forefront.</p>
-                    <span class="status-tag">Status: On a pause</span>
+
+                <div class="sub-exp-grid">
+                    <div class="sub-card">
+                        <span class="mono">Editorial</span>
+                        <h4>Content Writer</h4>
+                        <span class="org-name">Igniting Sparks</span>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Distilling stock markets, technology, and geopolitics into actionable narratives.</p>
+                    </div>
+                    <div class="sub-card">
+                        <span class="mono">Initiative</span>
+                        <h4>Co-Founder</h4>
+                        <span class="org-name">CANDID TALKS</span>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Facilitating authentic professional dialogue and content creation.</p>
+                        <span class="status-tag">Status: On a pause</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="research">
             <div class="section-title">
-                <span class="mono">Portfolio</span>
-                <h2>Research Thematics</h2>
+                <span class="mono">Analysis</span>
+                <h2>Thematic Portfolios</h2>
             </div>
             <div class="grid">
                 <div class="card">
                     <span class="mono">Sector Analysis</span>
                     <h3>Tech Growth 2026</h3>
-                    <p>An in-depth look into emerging semiconductor trends and the impact of localized AI infrastructure on market valuation.</p>
+                    <p>Quantitative mapping of semiconductor cycles and the valuation impact of localized AI infrastructure.</p>
                 </div>
                 <div class="card">
                     <span class="mono">Valuation</span>
                     <h3>Energy Transition</h3>
-                    <p>Comparative analysis of renewable energy giants vs. traditional power structures in the current regulatory landscape.</p>
+                    <p>Comparative modeling of renewable giants vs. legacy power within global regulatory frameworks.</p>
                 </div>
                 <div class="card">
-                    <span class="mono">Strategy</span>
+                    <span class="mono">Macro</span>
                     <h3>Defensive Hedges</h3>
-                    <p>A data-backed framework for protecting portfolios against high-volatility cycles in developing markets.</p>
+                    <p>A data-backed framework for volatility protection in developing market portfolios.</p>
                 </div>
             </div>
         </section>
 
-        <section id="blog">
-            <div class="section-title">
-                <span class="mono">Insights</span>
-                <h2>Latest Publications</h2>
-            </div>
-            <div id="blog-posts">
-                <p class="mono" style="opacity: 0.5; font-size: 0.8rem;">Syncing research feed...</p>
+        <section id="blog" class="section-alt">
+            <div class="container">
+                <div class="section-title">
+                    <span class="mono">Intelligence</span>
+                    <h2>Latest Insights</h2>
+                </div>
+                <div id="blog-posts">
+                    <p class="mono" style="opacity: 0.5;">Loading publication feed...</p>
+                </div>
             </div>
         </section>
 
         <footer>
             <span class="footer-logo">Devansh Singla</span>
-            <p class="footer-text">Building intelligence for modern finance. Specialist in valuation, forensic analysis, and equity strategy.</p>
+            <p class="footer-text">Decoding modern finance through valuation, forensic analysis, and equity strategy.</p>
             <div class="social-links" style="justify-content: center;">
                 <a href="mailto:your.email@example.com">Email</a>
                 <a href="https://linkedin.com/in/devanshsingla/">LinkedIn</a>
                 <a href="http://ignitingsparkswithdevansh.blogspot.com/">Blog</a>
             </div>
-            <p class="mono" style="margin-top: 30px; opacity: 0.4; font-size: 0.6rem;">© 2026 Equity Research Portfolio</p>
+            <p class="mono" style="margin-top: 40px; opacity: 0.3; font-size: 0.55rem;">© 2026 Institutional Equity Portfolio</p>
         </footer>
     </div>
 
@@ -242,15 +257,15 @@
                         
                         return `
                             <a href="${post.url}" target="_blank" class="blog-card">
-                                <span class="mono" style="font-size: 0.65rem;">${date}</span>
+                                <span class="mono" style="font-size: 0.6rem;">${date}</span>
                                 <h3>${post.title}</h3>
-                                <p style="font-size: 0.8rem; color: var(--text-dim);">${snippet}</p>
+                                <p style="font-size: 0.85rem; color: var(--text-dim);">${snippet}</p>
                             </a>
                         `;
                     }).join('');
                 }
             } catch (e) {
-                container.innerHTML = `<p class="mono" style="font-size: 0.75rem;">Feed temporarily unavailable.</p>`;
+                container.innerHTML = `<p class="mono" style="font-size: 0.7rem;">Feed momentarily offline.</p>`;
             }
         }
 
