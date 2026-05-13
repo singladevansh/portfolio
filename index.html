@@ -51,66 +51,59 @@
 
         /* --- LAYOUT & SPACING --- */
         .container { max-width: 900px; margin: 0 auto; padding: 0 30px; }
-        section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+        section { padding: 35px 0; border-bottom: 1px solid var(--border); }
         section:last-of-type { border-bottom: none; }
 
         /* --- HERO --- */
-        .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 110px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        .profile-container { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 1px solid var(--border); margin-bottom: 20px; background: var(--bg-alt); }
+        .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 100px; padding-bottom: 35px; border-bottom: 1px solid var(--border); }
+        .profile-container { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 1px solid var(--border); margin-bottom: 15px; background: var(--bg-alt); }
         .profile-container img { width: 100%; height: 100%; object-fit: cover; }
         
-        .hero-text h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 5px; letter-spacing: -0.02em; }
-        .hero-role { font-size: 1.05rem; color: var(--accent); font-weight: 500; margin-bottom: 15px; display: block; }
-        .hero-text p { font-size: 1rem; color: var(--text-dim); max-width: 550px; margin: 0 auto 25px; font-weight: 400; }
+        .hero-text h1 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 5px; letter-spacing: -0.02em; }
+        .hero-role { font-size: 1rem; color: var(--accent); font-weight: 500; margin-bottom: 15px; display: block; }
+        .hero-text p { font-size: 0.95rem; color: var(--text-dim); max-width: 500px; margin: 0 auto 20px; font-weight: 400; }
         
         .social-links { display: flex; gap: 20px; justify-content: center; width: 100%; }
         .social-links a { text-decoration: none; font-size: 0.7rem; color: var(--text-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; transition: var(--transition); opacity: 0.6; }
         .social-links a:hover { opacity: 1; color: var(--accent); }
 
         /* --- SECTION TITLES --- */
-        .section-title { margin-bottom: 30px; }
-        .section-title h2 { font-size: 1.9rem; margin-top: 5px; }
+        .section-title { margin-bottom: 25px; }
+        .section-title h2 { font-size: 1.8rem; margin-top: 5px; }
 
         /* --- EXPERIENCE CARDS --- */
-        .boxed-card { padding: 35px; background: #fff; border-radius: 4px; border: 1px solid var(--border); margin-bottom: 25px; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; flex-wrap: wrap; }
-        .exp-header h3 { font-size: 1.5rem; }
+        .boxed-card { padding: 30px; background: #fff; border-radius: 4px; border: 1px solid var(--border); margin-bottom: 20px; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; flex-wrap: wrap; }
+        .exp-header h3 { font-size: 1.4rem; }
         .exp-meta { font-size: 0.85rem; color: var(--text-dim); text-align: right; }
         
-        .org-name { color: var(--accent); font-weight: 600; display: block; margin-bottom: 18px; font-size: 0.95rem; }
+        .org-name { color: var(--accent); font-weight: 600; display: block; margin-bottom: 15px; font-size: 0.9rem; }
         
         .exp-list { list-style: none; }
-        .exp-list li { margin-bottom: 10px; position: relative; padding-left: 20px; color: var(--text-dim); font-size: 0.92rem; }
+        .exp-list li { margin-bottom: 8px; position: relative; padding-left: 20px; color: var(--text-dim); font-size: 0.9rem; }
         .exp-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
-        .highlight { color: var(--text-main); font-weight: 500; }
 
         /* --- SUB-EXPERIENCE GRID --- */
-        .sub-exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        .sub-card { padding: 30px; background: #fff; border-radius: 4px; border: 1px solid var(--border); }
-        .sub-card h4 { font-size: 1.15rem; margin-bottom: 6px; }
-        .status-tag { font-size: 0.6rem; font-style: italic; color: var(--text-dim); margin-top: 10px; display: block; opacity: 0.8; }
+        .sub-exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .sub-card { padding: 25px; background: #fff; border-radius: 4px; border: 1px solid var(--border); }
+        .sub-card h4 { font-size: 1.1rem; margin-bottom: 4px; }
+        .status-tag { font-size: 0.55rem; font-style: italic; color: var(--text-dim); margin-top: 8px; display: block; opacity: 0.7; }
 
-        /* --- RESEARCH GRID --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .card { padding: 35px; border: 1px solid var(--border); transition: var(--transition); background: #fff; border-radius: 4px; }
-        .card:hover { border-color: var(--accent); transform: translateY(-4px); }
-        .card h3 { margin: 15px 0 10px; font-size: 1.4rem; }
-        .card p { font-size: 0.88rem; color: var(--text-dim); }
-
-        /* --- BLOG SECTION --- */
-        #blog-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
-        .blog-card { text-decoration: none; color: inherit; }
-        .blog-card h3 { font-size: 1.25rem; margin: 10px 0; line-height: 1.3; font-weight: 700; transition: color 0.3s; }
-        .blog-card:hover h3 { color: var(--accent); }
+        /* --- GRIDS (RESEARCH & BLOG) --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .card { padding: 30px; border: 1px solid var(--border); transition: var(--transition); background: #fff; border-radius: 4px; text-decoration: none; color: inherit; display: block; }
+        .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .card h3 { margin: 12px 0 8px; font-size: 1.3rem; transition: color 0.3s; }
+        .card:hover h3 { color: var(--accent); }
+        .card p { font-size: 0.85rem; color: var(--text-dim); }
 
         /* --- FOOTER --- */
-        footer { padding: 50px 0; text-align: center; border-top: 1px solid var(--border); background-color: var(--bg-alt); }
-        .footer-logo { font-size: 1.4rem; margin-bottom: 12px; display: block; }
-        .footer-text { font-size: 0.85rem; color: var(--text-dim); max-width: 450px; margin: 0 auto 25px; }
+        footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--border); background-color: var(--bg-alt); }
+        .footer-logo { font-size: 1.3rem; margin-bottom: 10px; display: block; }
+        .footer-text { font-size: 0.8rem; color: var(--text-dim); max-width: 400px; margin: 0 auto 20px; }
 
         @media (max-width: 768px) {
-            .hero { padding-top: 90px; }
-            .hero-text h1 { font-size: 2.4rem; }
+            .hero { padding-top: 80px; }
             .exp-header { flex-direction: column; text-align: left; }
             .exp-meta { text-align: left; margin-top: 5px; }
             .sub-exp-grid { grid-template-columns: 1fr; }
@@ -135,12 +128,12 @@
     <div class="container">
         <section class="hero" id="home">
             <div class="profile-container">
-                <img src="profile.jpg" alt="Devansh Singla" onerror="this.src='https://via.placeholder.com/150/F5F1EA/1C1917?text=DS'">
+                <img src="profile.jpg" alt="Devansh Singla" onerror="this.src='https://via.placeholder.com/140/F5F1EA/1C1917?text=DS'">
             </div>
             <div class="hero-text">
                 <h1>Devansh Singla</h1>
                 <span class="hero-role">Equity Research Analyst • CA Aspirant</span>
-                <p>Exploring markets through <span class="highlight">rigorous research</span>, valuation modeling, and macro-driven strategic analysis.</p>
+                <p>Decoding equity markets through data-driven research and strategic analysis. Professional insights for the futuristic investor.</p>
                 <div class="social-links">
                     <a href="https://linkedin.com/in/devanshsingla/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/singladevansh" target="_blank">GitHub</a>
@@ -152,7 +145,7 @@
 
         <section id="experience">
             <div class="section-title">
-                <span class="mono">Trajectory</span>
+                <span class="mono">Career</span>
                 <h2>Professional Experience</h2>
             </div>
 
@@ -164,9 +157,9 @@
                 <span class="org-name">Felix Advisory Private Limited · Full-time</span>
                 <ul class="exp-list">
                     <li>Undertook valuation analysis of various public and private entities across different sectors.</li>
-                    <li>Developed financial models: <span class="highlight">DCF, Option Pricing (Black Scholes), Backsolve, Monte Carlo Simulation</span>, and Market Multiples.</li>
-                    <li>Conducted valuations for <span class="highlight">M&A, Share Swaps, Share Transfers</span>, Impairment Assessment, and ESOP Valuation.</li>
-                    <li>Performed comprehensive research using <span class="highlight">S&P CapIQ, Tracxn</span>, and industry analysis software.</li>
+                    <li>Developed financial models: DCF, Option Pricing (Black Scholes), Backsolve, Monte Carlo Simulation, Market Multiples (EV/Revenue, EV/EBITDA, P/B).</li>
+                    <li>Conducted valuations for M&A, Share Swaps, Share Transfers, Impairment Assessment, and ESOP Valuation.</li>
+                    <li>Performed comprehensive research using S&P CapIQ, Tracxn, and industry analysis software.</li>
                 </ul>
             </div>
 
@@ -175,13 +168,13 @@
                     <span class="mono">Editorial</span>
                     <h4>Content Writer</h4>
                     <span class="org-name">Igniting Sparks</span>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">Distilling stock markets, technology, and geopolitics into actionable research narratives.</p>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">Self-run blog focused on finance, stock markets, technology, and geopolitics.</p>
                 </div>
                 <div class="sub-card">
                     <span class="mono">Initiative</span>
                     <h4>CANDID TALKS</h4>
                     <span class="org-name">Media & Dialogue</span>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">A professional content initiative bringing authentic market conversations to the forefront.</p>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">Content creation initiative bringing authentic conversations to the forefront.</p>
                     <span class="status-tag">Status: On a pause</span>
                 </div>
             </div>
@@ -189,35 +182,21 @@
 
         <section id="research">
             <div class="section-title">
-                <span class="mono">Portfolio</span>
-                <h2>Thematic Research</h2>
+                <span class="mono">Analysis</span>
+                <h2>Research Thematics</h2>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <span class="mono">Sector Analysis</span>
-                    <h3>Tech Growth 2026</h3>
-                    <p>Quantitative mapping of semiconductor trends and the valuation impact of localized AI infrastructure.</p>
-                </div>
-                <div class="card">
-                    <span class="mono">Valuation</span>
-                    <h3>Energy Transition</h3>
-                    <p>Comparative modeling of renewable energy giants vs. traditional power structures in the current regulatory landscape.</p>
-                </div>
-                <div class="card">
-                    <span class="mono">Macro Strategy</span>
-                    <h3>Defensive Hedges</h3>
-                    <p>A data-backed framework for protecting portfolios against high-volatility cycles in developing markets.</p>
-                </div>
+            <div class="grid" id="research-feed">
+                <p class="mono" style="opacity: 0.5; font-size: 0.7rem;">Syncing research reports...</p>
             </div>
         </section>
 
         <section id="blog">
             <div class="section-title">
-                <span class="mono">Intelligence</span>
+                <span class="mono">Publications</span>
                 <h2>Latest Insights</h2>
             </div>
-            <div id="blog-posts">
-                <p class="mono" style="opacity: 0.5; font-size: 0.7rem;">Syncing research feed...</p>
+            <div class="grid" id="insights-feed">
+                <p class="mono" style="opacity: 0.5; font-size: 0.7rem;">Syncing publication feed...</p>
             </div>
         </section>
 
@@ -229,51 +208,69 @@
                 <a href="https://linkedin.com/in/devanshsingla/">LinkedIn</a>
                 <a href="http://ignitingsparkswithdevansh.blogspot.com/">Blog</a>
             </div>
-            <p class="mono" style="margin-top: 35px; opacity: 0.3; font-size: 0.6rem;">© 2026 Institutional Equity Portfolio</p>
+            <p class="mono" style="margin-top: 30px; opacity: 0.3; font-size: 0.6rem;">© 2026 Institutional Equity Portfolio</p>
         </footer>
     </div>
 
     <script>
         /**
-         * RSS-TO-JSON Blog Feed Connection
-         * Fetches and displays the latest 4 posts from Igniting Sparks
+         * RSS-TO-JSON Automated Feed Sync
+         * 1. Research Feed: Specifically filters for 'Equity Research Reports' label.
+         * 2. Insights Feed: Pulls general posts from Igniting Sparks.
          */
-        async function fetchLatestInsights() {
-            const container = document.getElementById('blog-posts');
-            const BLOG_RSS = "https://ignitingsparkswithdevansh.blogspot.com/feeds/posts/default?alt=rss";
-            const CONVERTER_API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(BLOG_RSS)}`;
-
-            try {
-                const response = await fetch(CONVERTER_API);
-                const data = await response.json();
-
-                if (data.status === 'ok') {
-                    container.innerHTML = data.items.slice(0, 4).map(post => {
-                        const pubDate = new Date(post.pubDate).toLocaleDateString('en-US', { 
-                            month: 'short', 
-                            year: 'numeric' 
-                        });
-                        
-                        // Strip HTML tags for a clean editorial snippet
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = post.description;
-                        const snippet = (tempDiv.textContent || tempDiv.innerText || "").substring(0, 115).trim() + "...";
-
-                        return `
-                            <a href="${post.link}" target="_blank" class="blog-card">
-                                <span class="mono" style="font-size: 0.65rem;">${pubDate}</span>
-                                <h3>${post.title}</h3>
-                                <p style="font-size: 0.85rem; color: var(--text-dim);">${snippet}</p>
-                            </a>
-                        `;
-                    }).join('');
+        
+        async function syncFeeds() {
+            const BLOG_BASE_URL = "https://ignitingsparkswithdevansh.blogspot.com/feeds/posts/default";
+            
+            // Paths for filtered and general feeds
+            const feeds = [
+                {
+                    // Label-specific feed for Research section
+                    url: `${BLOG_BASE_URL}/-/Equity%20Research%20Reports?alt=rss`,
+                    containerId: 'research-feed',
+                    label: 'Sector Analysis'
+                },
+                {
+                    // General feed for Insights section
+                    url: `${BLOG_BASE_URL}?alt=rss`,
+                    containerId: 'insights-feed',
+                    label: 'Market Insight'
                 }
-            } catch (e) {
-                container.innerHTML = `<p class="mono" style="font-size: 0.7rem;">Feed momentarily offline. <a href="http://ignitingsparkswithdevansh.blogspot.com/" style="color:var(--accent)">Visit Research Blog</a></p>`;
+            ];
+
+            for (const feed of feeds) {
+                const container = document.getElementById(feed.containerId);
+                const CONVERTER_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`;
+
+                try {
+                    const response = await fetch(CONVERTER_URL);
+                    const data = await response.json();
+
+                    if (data.status === 'ok' && data.items.length > 0) {
+                        container.innerHTML = data.items.slice(0, 3).map(post => {
+                            const date = new Date(post.pubDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = post.description;
+                            const snippet = (tempDiv.textContent || tempDiv.innerText || "").substring(0, 110).trim() + "...";
+
+                            return `
+                                <a href="${post.link}" target="_blank" class="card">
+                                    <span class="mono" style="font-size: 0.6rem;">${date} • ${feed.label}</span>
+                                    <h3>${post.title}</h3>
+                                    <p>${snippet}</p>
+                                </a>
+                            `;
+                        }).join('');
+                    } else {
+                        container.innerHTML = `<p class="mono" style="font-size: 0.7rem;">No posts found in this section.</p>`;
+                    }
+                } catch (e) {
+                    container.innerHTML = `<p class="mono" style="font-size: 0.7rem;">Feed momentarily offline.</p>`;
+                }
             }
         }
 
-        document.addEventListener('DOMContentLoaded', fetchLatestInsights);
+        document.addEventListener('DOMContentLoaded', syncFeeds);
     </script>
 </body>
 </html>
