@@ -97,11 +97,6 @@
         .card:hover h3 { color: var(--accent); }
         .card p { font-size: 0.85rem; color: var(--text-dim); }
 
-        /* --- FOOTER --- */
-        footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--border); background-color: var(--bg-alt); }
-        .footer-logo { font-size: 1.3rem; margin-bottom: 10px; display: block; }
-        .footer-text { font-size: 0.8rem; color: var(--text-dim); max-width: 400px; margin: 0 auto 20px; }
-
         @media (max-width: 768px) {
             .hero { padding-top: 80px; }
             .exp-header { flex-direction: column; text-align: left; }
@@ -135,6 +130,7 @@
                 <span class="hero-role">Equity Research Analyst • CA Aspirant</span>
                 <p>Decoding equity markets through data-driven research and strategic analysis. Professional insights for the futuristic investor.</p>
                 <div class="social-links">
+                    <a href="https://instagram.com/singladevansh" target="_blank">Instagram</a>
                     <a href="https://linkedin.com/in/devanshsingla/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/singladevansh" target="_blank">GitHub</a>
                     <a href="http://ignitingsparkswithdevansh.blogspot.com/" target="_blank">Blog</a>
@@ -183,7 +179,7 @@
         <section id="research">
             <div class="section-title">
                 <span class="mono">Analysis</span>
-                <h2>Research Thematics</h2>
+                <h2>Research Work</h2>
             </div>
             <div class="grid" id="research-feed">
                 <p class="mono" style="opacity: 0.5; font-size: 0.7rem;">Syncing research reports...</p>
@@ -200,16 +196,6 @@
             </div>
         </section>
 
-        <footer>
-            <span class="footer-logo">Devansh Singla</span>
-            <p class="footer-text">Decoding modern finance through valuation modeling, forensic analysis, and equity strategy.</p>
-            <div class="social-links">
-                <a href="mailto:your.email@example.com">Email</a>
-                <a href="https://linkedin.com/in/devanshsingla/">LinkedIn</a>
-                <a href="http://ignitingsparkswithdevansh.blogspot.com/">Blog</a>
-            </div>
-            <p class="mono" style="margin-top: 30px; opacity: 0.3; font-size: 0.6rem;">© 2026 Institutional Equity Portfolio</p>
-        </footer>
     </div>
 
     <script>
@@ -227,14 +213,12 @@
                 {
                     // Label-specific feed for Research section
                     url: `${BLOG_BASE_URL}/-/Equity%20Research%20Reports?alt=rss`,
-                    containerId: 'research-feed',
-                    label: 'Sector Analysis'
+                    containerId: 'research-feed'
                 },
                 {
                     // General feed for Insights section
                     url: `${BLOG_BASE_URL}?alt=rss`,
-                    containerId: 'insights-feed',
-                    label: 'Market Insight'
+                    containerId: 'insights-feed'
                 }
             ];
 
@@ -255,7 +239,7 @@
 
                             return `
                                 <a href="${post.link}" target="_blank" class="card">
-                                    <span class="mono" style="font-size: 0.6rem;">${date} • ${feed.label}</span>
+                                    <span class="mono" style="font-size: 0.6rem;">${date}</span>
                                     <h3>${post.title}</h3>
                                     <p>${snippet}</p>
                                 </a>
