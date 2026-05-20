@@ -83,6 +83,15 @@
         .exp-list li { margin-bottom: 8px; position: relative; padding-left: 20px; color: var(--text-dim); font-size: 0.9rem; }
         .exp-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
 
+        /* --- ACCORDION DETAILS (NEW) --- */
+        details.boxed-card { transition: var(--transition); }
+        .exp-summary { cursor: pointer; list-style: none; position: relative; padding-right: 25px; outline: none; }
+        .exp-summary::-webkit-details-marker { display: none; } /* Hides default arrow */
+        .exp-summary::after { content: "▼"; position: absolute; right: 0; top: 10px; font-size: 0.8rem; color: var(--accent); transition: transform 0.3s ease; }
+        details[open] .exp-summary::after { transform: rotate(180deg); }
+        .exp-summary .org-name { margin-bottom: 0; } /* Remove bottom margin when closed */
+        details[open] .exp-list { margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--border); }
+
         /* --- SUB-EXPERIENCE GRID --- */
         .sub-exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .sub-card { padding: 25px; background: #fff; border-radius: 4px; border: 1px solid var(--border); }
@@ -145,19 +154,22 @@
                 <h2>Professional Experience</h2>
             </div>
 
-            <div class="boxed-card">
-                <div class="exp-header">
-                    <h3>Valuation & Equity Research</h3>
-                    <div class="exp-meta">Aug 2023 - Jul 2025 · 2 yrs<br>Gurugram, India</div>
-                </div>
-                <span class="org-name">Felix Advisory Private Limited · Full-time</span>
+            <details class="boxed-card">
+                <summary class="exp-summary">
+                    <div class="exp-header">
+                        <h3>Valuation & Equity Research</h3>
+                        <div class="exp-meta">Aug 2023 - Jul 2025 · 2 yrs<br>Gurugram, India</div>
+                    </div>
+                    <span class="org-name">Felix Advisory Private Limited · Full-time</span>
+                </summary>
+                
                 <ul class="exp-list">
                     <li>Undertook valuation analysis of various public and private entities across different sectors.</li>
                     <li>Developed financial models: DCF, Option Pricing (Black Scholes), Backsolve, Monte Carlo Simulation, Market Multiples (EV/Revenue, EV/EBITDA, P/B).</li>
                     <li>Conducted valuations for M&A, Share Swaps, Share Transfers, Impairment Assessment, and ESOP Valuation.</li>
                     <li>Performed comprehensive research using S&P CapIQ, Tracxn, and industry analysis software.</li>
                 </ul>
-            </div>
+            </details>
 
             <div class="sub-exp-grid">
                 <div class="sub-card">
