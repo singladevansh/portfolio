@@ -197,7 +197,6 @@
                 <div class="sub-card">
                     <span class="mono">Initiative</span>
                     <h4>CANDID TALKS</h4>
-                    <span class="org-name">Media & Dialogue</span>
                     <p style="font-size: 0.85rem; color: var(--text-dim);">Content creation initiative bringing authentic conversations to the forefront.</p>
                     <span class="status-tag">Status: On a pause</span>
                 </div>
@@ -206,7 +205,6 @@
 
         <section id="research">
             <div class="section-title">
-                <span class="mono">Analysis</span>
                 <h2>Equity Research Reports</h2>
             </div>
             <div class="grid-section">
@@ -219,7 +217,6 @@
 
         <section id="blog">
             <div class="section-title">
-                <span class="mono">Publications</span>
                 <h2>Latest Blogs</h2>
             </div>
             <div class="grid-section">
@@ -245,13 +242,13 @@
             // Paths for filtered and general feeds
             const feeds = [
                 {
-                    // Label-specific feed for Research section
-                    url: `${BLOG_BASE_URL}/-/Equity%20Research%20Reports?alt=rss`,
+                    // Label-specific feed for Research section - using correct label path
+                    url: `${BLOG_BASE_URL}/-/Equity+Research+Reports?alt=json`,
                     containerId: 'research-feed'
                 },
                 {
                     // General feed for Insights section
-                    url: `${BLOG_BASE_URL}?alt=rss`,
+                    url: `${BLOG_BASE_URL}?alt=json`,
                     containerId: 'insights-feed'
                 }
             ];
