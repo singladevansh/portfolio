@@ -80,8 +80,12 @@
         .org-name { color: var(--accent); font-weight: 600; display: block; margin-bottom: 15px; font-size: 0.9rem; }
         
         .exp-list { list-style: none; }
-        .exp-list li { margin-bottom: 8px; position: relative; padding-left: 20px; color: var(--text-dim); font-size: 0.9rem; }
+        .exp-list li { margin-bottom: 8px; position: relative; padding-left: 20px; color: var(--text-dim); font-size: 0.9rem; line-height: 1.5; }
         .exp-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
+        
+        /* For numbered items in Key Projects */
+        .exp-list li[data-project="true"] { padding-left: 30px; margin-bottom: 12px; }
+        .exp-list li[data-project="true"]::before { content: ""; }
 
         /* --- ACCORDION DETAILS (NEW) --- */
         details.boxed-card { transition: var(--transition); }
@@ -185,11 +189,32 @@
                     <li>Valuation for Mergers, Share Swaps, Issue or Transfer of shares, and other purposes including Impairment Assessment, ESOPs Valuation etc.</li>
                     <li>Portfolio valuations for VC Funds using the Market Multiple Method, Implied Multiple Method, Price of Recent Investment (PORI), Market Adjustments, etc.</li>
                     <li>Conducting comprehensive research using software tools like S&P CapIQ, Tracxn, Private Circle.</li>
-                    <li style="margin-top: 16px; font-weight: 600; color: var(--text-main);">Key Projects:</li>
-                    <li style="padding-left: 0; margin-left: 0;"><strong>1. Leading EV manufacturers</strong> - Contributed to the valuation for multiple purposes, including CCPS valuation, Pre-IPO deals, and financial reporting. Utilized methodologies such as DCF, Market Multiples, Option Pricing, and Monte Carlo Simulations.</li>
-                    <li style="padding-left: 0; margin-left: 0;"><strong>2. EaseMyTrip Transactions (in public domain)</strong> - As part of the valuation team, I contributed to the assessment of two critical transactions that marked EaseMyTrip's entry into the medical tourism and wellness sectors. These involved the valuation of the company's investments in Rollins International and Pflege Home Healthcare.</li>
-                    <li style="padding-left: 0; margin-left: 0;"><strong>3. Leading Renewable energy company</strong> – Part of the valuation focusing on solar and wind energy assets. Utilized DCF and Market Multiples based on operational capacity to assess the company's value, understanding of its renewable energy portfolio.</li>
-                    <li style="padding-left: 0; margin-left: 0;"><strong>4. Portfolio Valuations</strong> - Engaged in valuation of investment portfolios spanning companies across Healthcare, Beauty & Wellness, Media, Mobility, and E-Commerce sectors.</li>
+                    <li style="margin-top: 16px; font-weight: 600; color: var(--text-main); padding-left: 0;">Key Projects:</li>
+                    <li data-project="true"><strong>Leading EV manufacturers</strong> - Contributed to the valuation for multiple purposes, including CCPS valuation, Pre-IPO deals, and financial reporting. Utilized methodologies such as DCF, Market Multiples, Option Pricing, and Monte Carlo Simulations.</li>
+                    <li data-project="true"><strong>EaseMyTrip Transactions (in public domain)</strong> - As part of the valuation team, I contributed to the assessment of two critical transactions that marked EaseMyTrip's entry into the medical tourism and wellness sectors. These involved the valuation of the company's investments in Rollins International and Pflege Home Healthcare.</li>
+                    <li data-project="true"><strong>Leading Renewable energy company</strong> – Part of the valuation focusing on solar and wind energy assets. Utilized DCF and Market Multiples based on operational capacity to assess the company's value, understanding of its renewable energy portfolio.</li>
+                    <li data-project="true"><strong>Portfolio Valuations</strong> - Engaged in valuation of investment portfolios spanning companies across Healthcare, Beauty & Wellness, Media, Mobility, and E-Commerce sectors.</li>
+                </ul>
+            </details>
+
+            <details class="boxed-card">
+                <summary class="exp-summary">
+                    <div class="exp-header">
+                        <h3>Equity Research</h3>
+                    </div>
+                    <span class="org-name">Personal Investment Research & Analysis</span>
+                </summary>
+                
+                <ul class="exp-list">
+                    <li>Growth based research in Micro and Small-cap segment across Infrastructure, Packaging, FMCG, Entertainment and Electrical Solutions industry.</li>
+                    <li>Identified high-growth opportunities across various sectors but opted against investment in certain companies due to concerns over weak fundamentals or issues with promoter integrity.</li>
+                    <li>Developed and maintained models to value the companies using Market Multiple Method and Discounted Cash Flow (DCF) method by projecting cash flows based on thorough research.</li>
+                    <li>Attended Concalls and got opportunity to ask firsthand queries from management and leveraged the information to adjust the financial forecasts.</li>
+                    <li style="margin-top: 16px; font-weight: 600; color: var(--text-main); padding-left: 0;">Key Projects:</li>
+                    <li data-project="true"><strong>Salzer Electronics Limited:</strong> An electrical solutions company - Conducted in-depth analysis when under 1000 Cr. company, identifying significant growth potential due to the promoter's expertise, integrity and strong fundamentals. Invested based on DCF and CCM resulting in 2.5x returns on investment within a year before correcting due to global headwinds and management guidance issues.</li>
+                    <li data-project="true"><strong>Cellecor Gadgets Limited:</strong> A High-growth company operating in Phones, Smart Watches, White Goods. Conducted in-depth analysis, but opted against investment due to issues with working capital, negative cash flow from operations and resignations of independent directors. Despite these concerns, the company delivered a 100%+ return in less than a year, underscoring the unpredictable nature of growth stocks.</li>
+                    <li data-project="true"><strong>Pakka Limited:</strong> Conducted thorough analysis on Pakka Limited, investing based on the promoter's integrity, strong historical track record, consistent cash flow from Cash Cows, and focus on innovation. Initially expected exponential growth due to favorable market conditions and product potential. However, quarterly results consistently underperformed expectations, reflecting lower-than-anticipated market acceptance of new products, leading to a reassessment of the investment thesis.</li>
+                    <li data-project="true"><strong>Nalwa Sons Investments Limited:</strong> Conducted Net Fair Valuation of complex structure of investments held by Jindal family group across various listed and private sister concerns entities.</li>
                 </ul>
             </details>
 
