@@ -20,11 +20,13 @@ Do not change the site's layout, color scheme, fonts, or visual structure on you
 
 Small, clearly-scoped fixes (typos, broken links, updating text content, fixing a bug) are fine to do directly. Anything that changes how the site *looks or is organized* should be proposed first, with a short explanation of what would change and why, before making the change.
 
-## Explain changes in simple, non-technical language
+## Explain changes using both technical terms and plain language
 
-Devansh is not a developer. When describing what was changed (in commit messages, PR descriptions, or comments), avoid technical jargon. Explain things the way you would to a non-technical business owner, e.g.:
-- Instead of "refactored the RSS-to-JSON fetch logic," say "fixed how the blog posts load on the page so they show up more reliably."
-- Instead of "added a media query breakpoint," say "made the page look better on phones and tablets."
+Devansh is not a developer, but he wants to learn the real technical terms too — not just simplified summaries. When describing what was changed (in commit messages, PR descriptions, or comments), state the technical term or jargon first, then immediately explain what it means in plain, non-technical language. For example:
+- "Refactored the RSS-to-JSON fetch logic (i.e., fixed how the blog posts load on the page so they show up more reliably)."
+- "Added a media query breakpoint (i.e., made the page look better on phones and tablets)."
+
+Don't drop the jargon and don't drop the plain-language explanation — include both, every time.
 
 ## Project structure
 
